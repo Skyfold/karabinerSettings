@@ -1,0 +1,821 @@
+<?xml version="1.0"?>
+<root>
+
+<item>
+    <name> Pfalzgraf changes </name>
+
+
+    <appdef>
+        <appname>ITERM</appname>
+        <equal>com.googlecode.iterm2</equal>
+    </appdef>
+
+    <appdef>
+        <appname>ATOM</appname>
+        <equal>com.github.atom</equal>
+    </appdef>
+
+    <item>
+        <name>Dvorak's Option_R+R to Delete</name>
+        <name>Dvorak's Option_R+l to Cursor Right</name>
+        <name>Dvorak's Option_R+h to Cursor Left</name>
+        <name>Dvorak's Option_R+J to Cursor Down</name>
+        <name>Dvorak's Option_R+K to Cursor Up</name>
+        <identifier>option.dvorak_optionR+R</identifier>
+        <autogen>__KeyToKey__ <!-- Delete -->
+            KeyCode::O,
+            ModifierFlag::OPTION_R,
+            KeyCode::DELETE
+        </autogen>
+        <autogen>__KeyToKey__ <!-- Cursor Right -->
+            KeyCode::P,
+            ModifierFlag::OPTION_R,
+            KeyCode::CURSOR_RIGHT
+        </autogen>
+        <autogen>__KeyToKey__ <!-- Cursor Left -->
+            KeyCode::J,
+            ModifierFlag::OPTION_R,
+            KeyCode::CURSOR_LEFT
+        </autogen>
+        <autogen>__KeyToKey__ <!-- Cursor Down -->
+            KeyCode::C,
+            ModifierFlag::OPTION_R,
+            KeyCode::CURSOR_DOWN
+        </autogen>
+        <autogen>__KeyToKey__ <!-- Cursor Up -->
+            KeyCode::V,
+            ModifierFlag::OPTION_R,
+            KeyCode::CURSOR_UP
+        </autogen>
+    </item>
+
+    <item>
+        <name>Dvorak's Control+W to Option+Delete</name>
+        <name>Dvorak's Control+I to Tab</name>
+        <name>Dvorak's Control+N to Cursor Down</name>
+        <name>Dvorak's Control+P to Cursor Up</name>
+        <name>Dvorak's Option_R+B to Left One word</name>
+        <name>Dvorak's Option_R+F to Right one word</name>
+        <appendix>(except Emacs, Terminal, iTerm, X11, virtual machine, RDC, Eclipse)</appendix>
+        <identifier>option.dvorak_emacsmode_ex_controlW2</identifier>
+        <not>EMACS, TERMINAL, ITERM, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11, ECLIPSE</not>
+        <autogen>__KeyToKey__ <!-- C-W Delete one word -->
+            KeyCode::COMMA,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+            KeyCode::DELETE,
+            ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>__KeyToKey__ <!-- C-I Tab -->
+            KeyCode::G,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+            KeyCode::TAB
+        </autogen>
+        <autogen>__KeyToKey__ <!-- C-N Cursor Down -->
+            KeyCode::L,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+            KeyCode::CURSOR_DOWN
+        </autogen>
+        <autogen>__KeyToKey__ <!-- C-P Cursor up -->
+            KeyCode::R,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+            KeyCode::CURSOR_UP
+        </autogen>
+        <autogen>__KeyToKey__ <!-- M-B Left one word -->
+            KeyCode::N,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+            KeyCode::CURSOR_LEFT,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+        </autogen>
+        <autogen>__KeyToKey__ <!-- M-F Right one word -->
+            KeyCode::Y,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+            KeyCode::CURSOR_RIGHT,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+        </autogen>
+        <block>
+            <not>FIREFOX, GOOGLE_CHROME, EMACS, TERMINAL, ITERM, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11, ECLIPSE</not>
+            <autogen>__KeyToKey__ <!-- C-U Tab -->
+                KeyCode::F,
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+                KeyCode::DELETE,
+                ModifierFlag::COMMAND_R
+            </autogen>
+        </block>
+    </item>
+
+    <item>
+        <name> Symbols from EXTRA3 modifier </name>
+        <appendix> o+e is EXTRA3 </appendix>
+        <identifier> EXTRA3.symbols </identifier>
+        <autogen>
+            __SimultaneousKeyPresses__
+            KeyCode::S,
+            KeyCode::D,
+            KeyCode::VK_MODIFIER_EXTRA3,
+        </autogen>
+        <autogen> __KeyToKey__ <!-- g becomes ! --> 
+            KeyCode::U, ModifierFlag::EXTRA3, KeyCode::KEY_1, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- C becomes = --> 
+            KeyCode::I, ModifierFlag::EXTRA3, KeyCode::BRACKET_RIGHT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- R becomes + --> 
+            KeyCode::O, ModifierFlag::EXTRA3, KeyCode::BRACKET_RIGHT, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- L becomes $ --> 
+            KeyCode::P, ModifierFlag::EXTRA3, KeyCode::KEY_4,
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- / becomes \ --> 
+            KeyCode::BRACKET_LEFT, ModifierFlag::EXTRA3, KeyCode::BACKSLASH
+        </autogen>
+        <autogen> __KeyToKey__ <!-- D becomes ~ --> 
+            KeyCode::H, ModifierFlag::EXTRA3, KeyCode::BACKQUOTE, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- H becomes ^ --> 
+            KeyCode::J, ModifierFlag::EXTRA3, KeyCode::KEY_6, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- T becomes ( --> 
+            KeyCode::K, ModifierFlag::EXTRA3, KeyCode::KEY_9, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- N becomes % --> 
+            KeyCode::L, ModifierFlag::EXTRA3, KeyCode::KEY_5, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- S becomes ) --> 
+            KeyCode::SEMICOLON, ModifierFlag::EXTRA3, KeyCode::KEY_0, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- - becomes | --> 
+            KeyCode::QUOTE, ModifierFlag::EXTRA3, KeyCode::BACKSLASH, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- B becomes & --> 
+            KeyCode::N, ModifierFlag::EXTRA3, KeyCode::KEY_7, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- M becomes ` --> 
+            KeyCode::M, ModifierFlag::EXTRA3, KeyCode::BACKQUOTE 
+        </autogen>
+        <autogen> __KeyToKey__ <!-- W becomes @ --> 
+            KeyCode::COMMA, ModifierFlag::EXTRA3, KeyCode::KEY_2,
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- V becomes * -->
+            KeyCode::DOT, ModifierFlag::EXTRA3, KeyCode::KEY_8, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- Z becomes # -->
+            KeyCode::SLASH, ModifierFlag::EXTRA3, KeyCode::KEY_3, 
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        
+    </item>
+
+    <item>
+        <name> Numpad from EXTRA2 modifier </name>
+        <appendix> 0 - 9 (0 is on q) [t+n is EXTRA2] </appendix>
+        <identifier> EXTRA2.numpad </identifier>
+        <autogen>
+            __SimultaneousKeyPresses__
+            KeyCode::K,
+            KeyCode::L,
+            KeyCode::VK_MODIFIER_EXTRA2,
+        </autogen>
+        <autogen> __KeyToKey__ <!-- 0 -->
+            KeyCode::A, ModifierFlag::EXTRA2, KeyCode::KEY_0
+        </autogen>
+        <autogen> __KeyToKey__ <!-- 1 -->
+            KeyCode::X, ModifierFlag::EXTRA2, KeyCode::KEY_1
+        </autogen>
+        <autogen> __KeyToKey__ <!-- 2 -->
+            KeyCode::C, ModifierFlag::EXTRA2, KeyCode::KEY_2
+        </autogen>
+        <autogen> __KeyToKey__ <!-- 3 -->
+            KeyCode::V, ModifierFlag::EXTRA2, KeyCode::KEY_3
+        </autogen>
+        <autogen> __KeyToKey__ <!-- 4 -->
+            KeyCode::S, ModifierFlag::EXTRA2, KeyCode::KEY_4
+        </autogen>
+        <autogen> __KeyToKey__ <!-- 5 -->
+            KeyCode::D, ModifierFlag::EXTRA2, KeyCode::KEY_5
+        </autogen>
+        <autogen> __KeyToKey__ <!-- 6 -->
+            KeyCode::F, ModifierFlag::EXTRA2, KeyCode::KEY_6
+        </autogen>
+        <autogen> __KeyToKey__ <!-- 7 -->
+            KeyCode::W, ModifierFlag::EXTRA2, KeyCode::KEY_7
+        </autogen>
+        <autogen> __KeyToKey__ <!-- 8 -->
+            KeyCode::E, ModifierFlag::EXTRA2, KeyCode::KEY_8
+        </autogen>
+        <autogen> __KeyToKey__ <!-- > -->
+            KeyCode::T, ModifierFlag::EXTRA2, KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- < -->
+            KeyCode::G, ModifierFlag::EXTRA2, KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- : -->
+            KeyCode::Z, ModifierFlag::EXTRA2, KeyCode::Z, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyToKey__ <!-- . -->
+            KeyCode::Q, ModifierFlag::EXTRA2, KeyCode::E
+        </autogen>
+        <autogen> __KeyToKey__ <!-- 9 -->
+            KeyCode::R, ModifierFlag::EXTRA2, KeyCode::KEY_9
+        </autogen>
+    </item>
+
+    <item>
+        <name>Option_R and p to Shift CMD Tab</name>
+        <identifier>remap.OptionRtoP_ShiftCMDTab</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::R,
+            ModifierFlag::OPTION_R,
+            KeyCode::TAB,
+            ModifierFlag::COMMAND_R, ModifierFlag::SHIFT_R
+        </autogen>
+    </item>
+
+    <item>
+        <name>Option_R and n to CMD Tab</name>
+        <identifier>remap.OptionRtoN_CMDTab</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::L,
+            ModifierFlag::OPTION_R,
+            KeyCode::TAB,
+            ModifierFlag::COMMAND_R
+        </autogen>
+    </item>
+
+    <item>
+        <name> The non letters give other keys and L_R_Shift are brackets </name>
+        <appendix> I just added the cool ones back (So discriptive) </appendix>
+        <identifier> AlltheCoolKids </identifier>
+        <autogen> __KeyOverlaidModifier__ <!-- [ on tap -->
+            KeyCode::SHIFT_L,
+            KeyCode::SHIFT_L,
+            KeyCode::MINUS,
+        </autogen>
+        <autogen> __KeyOverlaidModifier__ <!-- [ on tap -->
+            KeyCode::SHIFT_R,
+            KeyCode::SHIFT_R,
+            KeyCode::EQUAL,
+        </autogen>
+        <autogen> __HoldingKeyToKey__ <!-- | on p press -->
+            KeyCode::R,
+            KeyCode::R,
+            KeyCode::VK_NONE,
+            KeyCode::BACKSLASH,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+            Option::NOREPEAT
+        </autogen>
+        <autogen> __HoldingKeyToKey__ <!-- @ on q press -->
+            KeyCode::X,
+            KeyCode::X,
+            KeyCode::VK_NONE,
+            KeyCode::KEY_2,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+            Option::NOREPEAT
+        </autogen>
+        <autogen> __HoldingKeyToKey__ <!-- * on j press -->
+            KeyCode::C,
+            KeyCode::C,
+            KeyCode::VK_NONE,
+            KeyCode::KEY_8,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+            Option::NOREPEAT
+        </autogen>
+        <autogen> __HoldingKeyToKey__ <!-- # on k press -->
+            KeyCode::V,
+            KeyCode::V,
+            KeyCode::VK_NONE,
+            KeyCode::KEY_3,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+            Option::NOREPEAT
+        </autogen>
+        <autogen> __HoldingKeyToKey__ <!-- ! on i press -->
+            KeyCode::G,
+            KeyCode::G,
+            KeyCode::VK_NONE,
+            KeyCode::KEY_1,
+            ModifierFlag::SHIFT_R,
+            Option::NOREPEAT
+        </autogen>
+        <autogen> __HoldingKeyToKey__ <!-- ~ on u press -->
+            KeyCode::F,
+            KeyCode::F,
+            KeyCode::VK_NONE,
+            KeyCode::BACKQUOTE,
+            ModifierFlag::SHIFT_R,
+            Option::NOREPEAT
+        </autogen>
+        <autogen> __HoldingKeyToKey__ <!-- $ on l press -->
+            KeyCode::P,
+            KeyCode::P,
+            KeyCode::VK_NONE,
+            KeyCode::KEY_4,
+            ModifierFlag::SHIFT_R,
+            Option::NOREPEAT
+        </autogen>
+        <autogen> __HoldingKeyToKey__ <!-- ^ on h press -->
+            KeyCode::J,
+            KeyCode::J,
+            KeyCode::VK_NONE,
+            KeyCode::KEY_6,
+            ModifierFlag::SHIFT_R,
+            Option::NOREPEAT
+        </autogen>
+        <autogen> __HoldingKeyToKey__ <!-- \ on / press -->
+            KeyCode::BRACKET_LEFT,
+            KeyCode::BRACKET_LEFT,
+            KeyCode::VK_NONE,
+            KeyCode::BACKSLASH,
+            Option::NOREPEAT
+        </autogen>
+    </item>
+
+    <item>
+        <name> Holding Key gives differnt key </name>
+        <appendix> This is what you alt keyboard was, mostly
+        (only for Dvorak layout, as in you have your keyboard in pref set to Dvorak)
+        </appendix>
+        <only> ATOM, ITERM, GOOGLE_CHROME, MAIL </only>
+        <identifier> Hold to Type Symbols (This almost feels wrong XD)</identifier>
+        <autogen>__HoldingKeyToKey__ <!-- " -->
+            KeyCode::Q, KeyCode::Q, KeyCode::VK_NONE, KeyCode::Q, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- < -->
+            KeyCode::W, KeyCode::W, KeyCode::VK_NONE, KeyCode::W, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- > -->
+            KeyCode::E, KeyCode::E, KeyCode::VK_NONE, KeyCode::E, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- | -->
+           KeyCode::R, KeyCode::R, KeyCode::VK_NONE, KeyCode::BACKSLASH, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- \ -->
+           KeyCode::T, KeyCode::T, KeyCode::VK_NONE, KeyCode::BACKSLASH, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- / -->
+           KeyCode::Y, KeyCode::Y, KeyCode::VK_NONE, KeyCode::BRACKET_LEFT, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!--?  -->
+           KeyCode::U, KeyCode::U, KeyCode::VK_NONE, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- = -->
+            KeyCode::I, KeyCode::I, KeyCode::VK_NONE, KeyCode::BRACKET_RIGHT, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- delete -->
+            KeyCode::O, KeyCode::O, KeyCode::VK_NONE, KeyCode::DELETE
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- Cursor Right -->
+            KeyCode::P, KeyCode::P, KeyCode::VK_NONE, KeyCode::CURSOR_RIGHT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- $ -->
+            KeyCode::BRACKET_LEFT, KeyCode::BRACKET_LEFT, KeyCode::VK_NONE, KeyCode::KEY_4, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- { -->
+            KeyCode::A, KeyCode::A, KeyCode::VK_NONE, KeyCode::MINUS, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- [ -->
+            KeyCode::S, KeyCode::S, KeyCode::VK_NONE, KeyCode::MINUS, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- ( -->
+           KeyCode::D, KeyCode::D, KeyCode::VK_NONE, KeyCode::KEY_9, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- ~ -->
+           KeyCode::F, KeyCode::F, KeyCode::VK_NONE, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- ! -->
+           KeyCode::G, KeyCode::G, KeyCode::VK_NONE, KeyCode::KEY_1, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- ^ -->
+           KeyCode::H, KeyCode::H, KeyCode::VK_NONE, KeyCode::KEY_6, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- Cursor Left -->
+           KeyCode::J, KeyCode::J, KeyCode::VK_NONE, KeyCode::CURSOR_LEFT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- ) -->
+            KeyCode::K, KeyCode::K, KeyCode::VK_NONE, KeyCode::KEY_0, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- ] -->
+            KeyCode::L, KeyCode::L, KeyCode::VK_NONE, KeyCode::EQUAL, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- } -->
+            KeyCode::SEMICOLON, KeyCode::SEMICOLON, KeyCode::VK_NONE, KeyCode::EQUAL, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- _ -->
+            KeyCode::QUOTE, KeyCode::QUOTE, KeyCode::VK_NONE, KeyCode::QUOTE, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- : -->
+           KeyCode::Z, KeyCode::Z, KeyCode::VK_NONE, KeyCode::Z, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- @ -->
+           KeyCode::X, KeyCode::X, KeyCode::VK_NONE, KeyCode::KEY_2, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- Cursor Down -->
+           KeyCode::C, KeyCode::C, KeyCode::VK_NONE, KeyCode::CURSOR_DOWN
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- Cursor Up -->
+           KeyCode::V, KeyCode::V, KeyCode::VK_NONE, KeyCode::CURSOR_UP
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- & -->
+           KeyCode::B, KeyCode::B, KeyCode::VK_NONE, KeyCode::KEY_7, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- % -->
+           KeyCode::N, KeyCode::N, KeyCode::VK_NONE, KeyCode::KEY_5, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- ` -->
+           KeyCode::M, KeyCode::M, KeyCode::VK_NONE, KeyCode::BACKQUOTE, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- + -->
+           KeyCode::COMMA, KeyCode::COMMA, KeyCode::VK_NONE, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- * -->
+           KeyCode::DOT, KeyCode::DOT, KeyCode::VK_NONE, KeyCode::KEY_8, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- # -->
+           KeyCode::SLASH, KeyCode::SLASH, KeyCode::VK_NONE, KeyCode::KEY_3, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+    </item>
+
+    <item>
+        <name> All of the symboles connected to Extra1 </name>
+        <appendix> This is what you alt keyboard was, mostly
+        (only for Dvorak layout, as in you have your keyboard in pref set to Dvorak)
+        </appendix>
+        <identifier> symbolesFromAltKeyboard </identifier>
+        <autogen>__KeyToKey__ <!-- " -->
+            KeyCode::Q, ModifierFlag::EXTRA1, KeyCode::Q, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- < -->
+            KeyCode::W, ModifierFlag::EXTRA1, KeyCode::W, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- > -->
+            KeyCode::E, ModifierFlag::EXTRA1, KeyCode::E, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- | -->
+           KeyCode::R, ModifierFlag::EXTRA1, KeyCode::BACKSLASH, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- \ -->
+           KeyCode::T, ModifierFlag::EXTRA1, KeyCode::BACKSLASH
+        </autogen>
+        <autogen>__KeyToKey__ <!-- / -->
+           KeyCode::Y, ModifierFlag::EXTRA1, KeyCode::BRACKET_LEFT
+        </autogen>
+        <autogen>__KeyToKey__ <!--?  -->
+           KeyCode::U, ModifierFlag::EXTRA1, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- = -->
+           KeyCode::I, ModifierFlag::EXTRA1, KeyCode::BRACKET_RIGHT
+        </autogen>
+        <autogen>__KeyToKey__ <!-- $ -->
+            KeyCode::BRACKET_LEFT, ModifierFlag::EXTRA1, KeyCode::KEY_4, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- { -->
+            KeyCode::A, ModifierFlag::EXTRA1, KeyCode::MINUS, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- [ -->
+            KeyCode::S, ModifierFlag::EXTRA1, KeyCode::MINUS
+        </autogen>
+        <autogen>__KeyToKey__ <!-- ( -->
+           KeyCode::D, ModifierFlag::EXTRA1, KeyCode::KEY_9, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- ~ -->
+           KeyCode::F, ModifierFlag::EXTRA1, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- ! -->
+           KeyCode::G, ModifierFlag::EXTRA1, KeyCode::KEY_1, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- ^ -->
+           KeyCode::H, ModifierFlag::EXTRA1, KeyCode::KEY_6, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- ) -->
+            KeyCode::K, ModifierFlag::EXTRA1, KeyCode::KEY_0, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- ] -->
+            KeyCode::L, ModifierFlag::EXTRA1, KeyCode::EQUAL
+        </autogen>
+        <autogen>__KeyToKey__ <!-- } -->
+            KeyCode::SEMICOLON, ModifierFlag::EXTRA1, KeyCode::EQUAL, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- _ -->
+            KeyCode::QUOTE, ModifierFlag::EXTRA1, KeyCode::QUOTE, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- : -->
+           KeyCode::Z, ModifierFlag::EXTRA1, KeyCode::Z, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- @ -->
+           KeyCode::X, ModifierFlag::EXTRA1, KeyCode::KEY_2, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- & -->
+           KeyCode::B, ModifierFlag::EXTRA1, KeyCode::KEY_7, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- % -->
+           KeyCode::N, ModifierFlag::EXTRA1, KeyCode::KEY_5, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- ` -->
+           KeyCode::M, ModifierFlag::EXTRA1, KeyCode::BACKQUOTE
+        </autogen>
+        <autogen>__KeyToKey__ <!-- + -->
+           KeyCode::COMMA, ModifierFlag::EXTRA1, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- * -->
+           KeyCode::DOT, ModifierFlag::EXTRA1, KeyCode::KEY_8, ModifierFlag::SHIFT_R
+        </autogen>
+        <autogen>__KeyToKey__ <!-- # -->
+           KeyCode::SLASH, ModifierFlag::EXTRA1, KeyCode::KEY_3, ModifierFlag::SHIFT_R
+        </autogen>
+    </item>
+
+
+    <item>
+        <name> Arrow keys, pageUp/pageDown, Home/End on Control_R + Shift keyboard </name>
+        <item>
+            <name>J to Arrow Down</name>
+            <appendix> (type Shift + Control_R + j) </appendix>
+            <identifier> jtoArrowDown </identifier>
+            <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::EXTRA1, KeyCode::CURSOR_DOWN </autogen>
+        </item>
+        <item>
+            <name>k to Arrow Up</name>
+            <appendix> (type Shift + Control_R + k) </appendix>
+            <identifier> ktoArrowUp </identifier>
+            <autogen>__KeyToKey__ KeyCode::V, ModifierFlag::EXTRA1, KeyCode::CURSOR_UP </autogen>
+        </item>
+        <item>
+            <name>H to Arrow Left</name>
+            <appendix> (type Shift + Control_R + H) </appendix>
+            <identifier> HtoArrowLeft </identifier>
+            <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::EXTRA1, KeyCode::CURSOR_LEFT </autogen>
+        </item>
+        <item>
+            <name>L to Arrow Right</name>
+            <appendix> (type Shift + Control_R + L) </appendix>
+            <identifier> LtoArrowRight </identifier>
+            <autogen>__KeyToKey__ KeyCode::P, ModifierFlag::EXTRA1, KeyCode::CURSOR_RIGHT </autogen>
+        </item>
+
+        <item>
+            <name>S to Home</name>
+            <appendix> (type Shift + Control_R + s) </appendix>
+            <identifier> stoHome </identifier>
+            <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::EXTRA1, KeyCode::HOME </autogen>
+        </item>
+        <item>
+            <name>- to END</name>
+            <appendix> (type Shift + Control_R + -) </appendix>
+            <identifier> -toEnd </identifier>
+            <autogen>__KeyToKey__ KeyCode::QUOTE, ModifierFlag::EXTRA1, KeyCode::END </autogen>
+        </item>
+        <item>
+            <name>/ to PageUp</name>
+            <appendix> (type Shift + Control_R + /) </appendix>
+            <identifier> /toPageUp </identifier>
+            <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::EXTRA1, KeyCode::PAGEUP</autogen>
+        </item>
+        <item>
+            <name>Z to PageDown</name>
+            <appendix> (type Shift + Control_R + Z) </appendix>
+            <identifier> ZtoPageDown </identifier>
+            <autogen>__KeyToKey__ KeyCode::SLASH, ModifierFlag::EXTRA1, KeyCode::PAGEDOWN </autogen>
+        </item>
+        <item>
+            <name>T to Application Key</name>
+            <appendix> (type Shift + Control_R + T) </appendix>
+            <identifier> TtoApplicationKey </identifier>
+            <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::EXTRA1, KeyCode::PC_APPLICATION </autogen>
+        </item>
+    </item>
+
+
+
+    <item>
+        <name> Add/Change mod keys and add delete key </name>
+        <!--
+        <item>
+            <name>Space to Shift_r</name>
+            <appendix>(+ When you type Space only, send Space)</appendix>
+            <identifier>remap.SpaceToShiftr_Space</identifier>
+            <autogen>__KeyOverlaidModifier__ KeyCode::SPACE, KeyCode::SHIFT_R, KeyCode::SPACE</autogen>
+        </item>
+        -->
+        <!--
+        <item>
+            <name>Command_R to Control_R + Shift_R</name>
+            <appendix>Gives arrow keys on H,L,J,K</appendix>
+            <identifier>remap.CommandRtoContorl+ShiftL</identifier>
+            <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::CONTROL_R, ModifierFlag::SHIFT_R</autogen>
+        </item>
+        -->
+
+        <item>
+            <name>Option_R and Tab to CMD Tab</name>
+            <identifier>remap.Extra1Tab_CMDTab</identifier>
+            <autogen>
+                __KeyToKey__
+                KeyCode::COMMAND_L,
+                ModifierFlag::OPTION_R,
+                KeyCode::TAB,
+                ModifierFlag::COMMAND_R
+            </autogen>
+        </item>
+
+
+
+        <item>
+            <name>Command_R to Option_R</name>
+            <appendix>(+ when you only type Command_R you get Return)</appendix>
+            <identifier>remap.CommandR_OptionR_Enter</identifier>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::COMMAND_R,
+                KeyCode::OPTION_R,
+                KeyCode::RETURN
+            </autogen>
+        </item>
+
+        <item>
+            <name>Extra1 and Option_R to Space</name>
+            <identifier>remap.Extra1OptionR_Space</identifier>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::SPACE, ModifierFlag::OPTION_R,
+                KeyCode::VK_MODIFIER_EXTRA1, ModifierFlag::OPTION_R,
+                KeyCode::SPACE
+            </autogen>
+        </item>
+
+        <item>
+            <name>Space to Extra1</name>
+            <appendix>(+ When you type Space only, send Space)</appendix>
+            <identifier>remap.Space_Extra1</identifier>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::SPACE,
+                KeyCode::VK_MODIFIER_EXTRA1,
+                KeyCode::SPACE
+            </autogen>
+        </item>
+
+        <item>
+            <name>; and z also give shift</name>
+            <appendix>(may not be the best idea) </appendix>
+            <identifier> semiAndz_shift</identifier>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::Z,
+                KeyCode::SHIFT_L,
+                KeyCode::Z
+            </autogen>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::SLASH,
+                KeyCode::SHIFT_R,
+                KeyCode::SLASH
+            </autogen>
+        </item>
+
+        <item>
+            <name>Command_R to Option_R</name>
+            <appendix>(+ when you only type Command_R you get Return)</appendix>
+            <identifier>remap.CommandR_Return</identifier>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::COMMAND_R,
+                KeyCode::OPTION_R,
+                KeyCode::RETURN
+            </autogen>
+        </item>
+
+        <item>
+            <name>Command_R to Extra1</name>
+            <appendix>(+ when you only type  Command_R you get Return)</appendix>
+            <identifier>remap.CommandR_Extra1</identifier>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::COMMAND_R,
+                KeyCode::VK_MODIFIER_EXTRA1,
+                KeyCode::RETURN
+            </autogen>
+        </item>
+
+        <item>
+            <name>Command_L to Command_L</name>
+            <appendix>(+ When you type Command_L only, send TAB)</appendix>
+            <identifier>remap.CommandLtoCommandL_TAB</identifier>
+            <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_L, KeyCode::COMMAND_L, KeyCode::TAB</autogen>
+        </item>
+
+        <item>
+            <name> Option_r to Shift_r, Option_r, Command_r </name>
+            <identifier>remp.OptionRtoShiftR,OptionR,CommandR</identifier>
+            <autogen>__KeyToKey__
+                KeyCode::OPTION_R,
+
+                KeyCode::OPTION_R,
+                ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R
+            </autogen>
+        </item>
+
+
+        <!--
+        <item>
+            <name>Space To Option_R</name>
+            <appendix>(+ When you type Space only, send Space)</appendix>
+            <identifier>remap.SpaceToOptionR</identifier>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::SPACE,
+
+                KeyCode::OPTION_R,
+                KeyCode::SPACE,
+
+            </autogen>
+        </item>
+        -->
+
+        <!--
+            Note to self, this fixes problems where something and space need to produce space when typed by themselves
+        <item>
+            <name> SandS V2 partner </name>
+            <appendix> This makes Option + space work regarless of which is press first </appendix>
+            <identifier>remap.SandSV2Partner</identifier>
+            <autogen>
+                __KeyOverlaidModifier__
+                KeyCode::SPACE,
+                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+
+                KeyCode::SHIFT_L, ModifierFlag::OPTION_R,
+
+                KeyCode::SPACE,
+            </autogen>
+        </item>
+        -->
+
+        <item>
+            <name>Option_R + R to Delete</name>
+            <appendix>Makes Option_R + R = Delete</appendix>
+            <identifier>remap.OptionRandR_Delete</identifier>
+            <autogen>
+                __KeyToKey__
+                KeyCode::O,
+                ModifierFlag::OPTION_R,
+
+                KeyCode::DELETE
+            </autogen>
+        </item>
+
+        <item>
+            <name>Extra1 + R to Delete</name>
+            <appendix>Makes Extra1 + R = Delete</appendix>
+            <identifier>remap.Extra1andR_Delete</identifier>
+            <autogen>
+                __KeyToKey__
+                KeyCode::O,
+                ModifierFlag::EXTRA1,
+
+                KeyCode::DELETE
+            </autogen>
+        </item>
+        <!--
+        <item>
+            <name>Option_r and R to Delete</name>
+            <appendix>Option_r and R type Delete</appendix>
+            <identifier>remap.Option_RandR_delete</identifier>
+            <autogen>
+                __KeyToKey__
+                KeyCode::O,
+                ModifierFlag::OPTION_R,
+
+                KeyCode::DELETE
+            </autogen>
+        </item>
+        -->
+    </item>
+</item>
+
+  <!--
+  <item>
+    <name>option_r + bracket_left to shift_r and option_r</name>
+    <appendix>This lets you get option and shift easily</appendix>
+    <identifier>space_cadet.option_r_and_bracket_left_to_shift_r_and_option_r</identifier>
+    <autogen>
+        __KeyToKey__
+        KeyCode::O,
+        ModifierFlag::OPTION_R,
+
+        KeyCode::OPTION_R,
+        ModifierFlag::SHIFT_R
+    </autogen>
+  </item>
+  -->
+</root>
