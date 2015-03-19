@@ -113,68 +113,91 @@
             KeyCode::D,
             KeyCode::VK_MODIFIER_EXTRA3,
         </autogen>
-        <autogen> __KeyToKey__ <!-- g becomes ! --> 
-            KeyCode::U, ModifierFlag::EXTRA3, KeyCode::KEY_1, 
+        <autogen> __KeyToKey__ <!-- g becomes ! -->
+            KeyCode::U, ModifierFlag::EXTRA3, KeyCode::KEY_1,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
-        <autogen> __KeyToKey__ <!-- C becomes = --> 
+        <autogen> __KeyToKey__ <!-- C becomes = -->
             KeyCode::I, ModifierFlag::EXTRA3, KeyCode::BRACKET_RIGHT
         </autogen>
-        <autogen> __KeyToKey__ <!-- R becomes + --> 
-            KeyCode::O, ModifierFlag::EXTRA3, KeyCode::BRACKET_RIGHT, 
+        <autogen> __KeyToKey__ <!-- R becomes + -->
+            KeyCode::O, ModifierFlag::EXTRA3, KeyCode::BRACKET_RIGHT,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
-        <autogen> __KeyToKey__ <!-- L becomes $ --> 
+        <autogen> __KeyToKey__ <!-- L becomes $ -->
             KeyCode::P, ModifierFlag::EXTRA3, KeyCode::KEY_4,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
-        <autogen> __KeyToKey__ <!-- / becomes \ --> 
+        <autogen> __KeyToKey__ <!-- / becomes \ -->
             KeyCode::BRACKET_LEFT, ModifierFlag::EXTRA3, KeyCode::BACKSLASH
         </autogen>
-        <autogen> __KeyToKey__ <!-- D becomes ~ --> 
-            KeyCode::H, ModifierFlag::EXTRA3, KeyCode::BACKQUOTE, 
+        <autogen> __KeyToKey__ <!-- D becomes ~ -->
+            KeyCode::H, ModifierFlag::EXTRA3, KeyCode::BACKQUOTE,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
-        <autogen> __KeyToKey__ <!-- H becomes ^ --> 
-            KeyCode::J, ModifierFlag::EXTRA3, KeyCode::KEY_6, 
+        <autogen> __KeyToKey__ <!-- H becomes ^ -->
+            KeyCode::J, ModifierFlag::EXTRA3, KeyCode::KEY_6,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
-        <autogen> __KeyToKey__ <!-- T becomes ( --> 
-            KeyCode::K, ModifierFlag::EXTRA3, KeyCode::KEY_9, 
+        <autogen> __KeyToKey__ <!-- T becomes Cursor Left -->
+            KeyCode::K, ModifierFlag::EXTRA3, KeyCode::CURSOR_LEFT,
+        </autogen>
+        <autogen> __KeyToKey__ <!-- N becomes Cursor Right -->
+            KeyCode::L, ModifierFlag::EXTRA3, KeyCode::CURSOR_RIGHT,
+        </autogen>
+        <autogen> __KeyToKey__ <!-- S becomes % -->
+            KeyCode::SEMICOLON, ModifierFlag::EXTRA3, KeyCode::KEY_5,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
-        <autogen> __KeyToKey__ <!-- N becomes % --> 
-            KeyCode::L, ModifierFlag::EXTRA3, KeyCode::KEY_5, 
+        <autogen> __KeyToKey__ <!-- S becomes ) -->
+            KeyCode::SEMICOLON, ModifierFlag::EXTRA3, KeyCode::KEY_0,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
-        <autogen> __KeyToKey__ <!-- S becomes ) --> 
-            KeyCode::SEMICOLON, ModifierFlag::EXTRA3, KeyCode::KEY_0, 
+        <autogen> __KeyToKey__ <!-- - becomes | -->
+            KeyCode::QUOTE, ModifierFlag::EXTRA3, KeyCode::BACKSLASH,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
-        <autogen> __KeyToKey__ <!-- - becomes | --> 
-            KeyCode::QUOTE, ModifierFlag::EXTRA3, KeyCode::BACKSLASH, 
+        <autogen> __KeyToKey__ <!-- B becomes & -->
+            KeyCode::N, ModifierFlag::EXTRA3, KeyCode::KEY_7,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
-        <autogen> __KeyToKey__ <!-- B becomes & --> 
-            KeyCode::N, ModifierFlag::EXTRA3, KeyCode::KEY_7, 
-                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        <autogen> __KeyToKey__ <!-- M becomes ` -->
+            KeyCode::M, ModifierFlag::EXTRA3, KeyCode::BACKQUOTE
         </autogen>
-        <autogen> __KeyToKey__ <!-- M becomes ` --> 
-            KeyCode::M, ModifierFlag::EXTRA3, KeyCode::BACKQUOTE 
-        </autogen>
-        <autogen> __KeyToKey__ <!-- W becomes @ --> 
+        <autogen> __KeyToKey__ <!-- W becomes @ -->
             KeyCode::COMMA, ModifierFlag::EXTRA3, KeyCode::KEY_2,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
         <autogen> __KeyToKey__ <!-- V becomes * -->
-            KeyCode::DOT, ModifierFlag::EXTRA3, KeyCode::KEY_8, 
+            KeyCode::DOT, ModifierFlag::EXTRA3, KeyCode::KEY_8,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
         <autogen> __KeyToKey__ <!-- Z becomes # -->
-            KeyCode::SLASH, ModifierFlag::EXTRA3, KeyCode::KEY_3, 
+            KeyCode::SLASH, ModifierFlag::EXTRA3, KeyCode::KEY_3,
                 MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
-        
+        <autogen> __KeyOverlaidModifier__ <!-- [ on tap -->
+            KeyCode::COMMAND_R,
+            KeyCode::OPTION_R,
+            KeyCode::EQUAL
+        </autogen>
+        <autogen> __KeyOverlaidModifier__ <!-- [ on tap -->
+            KeyCode::COMMAND_L,
+            KeyCode::COMMAND_R,
+            KeyCode::MINUS
+        </autogen>
+        <autogen> __KeyOverlaidModifier__ <!-- [ on tap -->
+            KeyCode::SHIFT_L,
+            KeyCode::SHIFT_L,
+            KeyCode::KEY_9,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
+        <autogen> __KeyOverlaidModifier__ <!-- ] on tap -->
+            KeyCode::SHIFT_R,
+            KeyCode::SHIFT_R,
+            KeyCode::KEY_0,
+            MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+        </autogen>
     </item>
 
     <item>
@@ -220,6 +243,9 @@
         <autogen> __KeyToKey__ <!-- < -->
             KeyCode::G, ModifierFlag::EXTRA2, KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
+        <autogen> __KeyToKey__ <!-- , -->
+            KeyCode::B, ModifierFlag::EXTRA2, KeyCode::W
+        </autogen>
         <autogen> __KeyToKey__ <!-- : -->
             KeyCode::Z, ModifierFlag::EXTRA2, KeyCode::Z, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
         </autogen>
@@ -228,6 +254,29 @@
         </autogen>
         <autogen> __KeyToKey__ <!-- 9 -->
             KeyCode::R, ModifierFlag::EXTRA2, KeyCode::KEY_9
+        </autogen>
+    </item>
+
+    <item>
+        <name>Holding Keys for " : _ greaterThan lessThan </name>
+        <identifier> holding.The.Not.Shit.Way</identifier>
+        <autogen>__HoldingKeyToKey__ <!-- ? -->
+            KeyCode::BRACKET_LEFT, KeyCode::BRACKET_LEFT, KeyCode::VK_NONE, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- " -->
+            KeyCode::Q, KeyCode::Q, KeyCode::VK_NONE, KeyCode::Q, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- < -->
+            KeyCode::W, KeyCode::W, KeyCode::VK_NONE, KeyCode::W, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- > -->
+            KeyCode::E, KeyCode::E, KeyCode::VK_NONE, KeyCode::E, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- : -->
+           KeyCode::Z, KeyCode::Z, KeyCode::VK_NONE, KeyCode::Z, ModifierFlag::SHIFT_R, Option::NOREPEAT
+        </autogen>
+        <autogen>__HoldingKeyToKey__ <!-- _ -->
+            KeyCode::QUOTE, KeyCode::QUOTE, KeyCode::VK_NONE, KeyCode::QUOTE, ModifierFlag::SHIFT_R, Option::NOREPEAT
         </autogen>
     </item>
 
